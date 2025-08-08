@@ -335,27 +335,28 @@ body {
     gap: 1.5rem;
 }
 
-.large-photo .image-placeholder {
+.large-photo {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(214, 51, 132, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.large-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(214, 51, 132, 0.15);
+}
+
+.about-photo {
     width: 100%;
     height: 280px;
-    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #e685a1;
-    border: 2px dashed #f8bbd9;
+    object-fit: cover;
+    display: block;
 }
 
-.large-photo .image-placeholder i {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.large-photo .image-placeholder p {
-    font-size: 1rem;
-    font-weight: 500;
+/* Remove old placeholder styles */
+.large-photo .image-placeholder {
+    display: none;
 }
 
 /* Work Section */
