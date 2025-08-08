@@ -158,7 +158,6 @@
             
             <div class="contact-content">
                 <div class="contact-info">
-                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -168,24 +167,89 @@
                             <p>м. Черкаси, вул. Небесної Сотні, 105</p>
                         </div>
                     </div>
+                    
+                    <div class="social-links">
+                        <h3>Слідкуйте за мною</h3>
+                        <div class="social-buttons">
+                            <a href="https://www.facebook.com/100095035722399/" target="_blank" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.instagram.com/anastasia_.zabolotna?igsh=MXc1NTM5MWJlZHo0NQ==" target="_blank" class="social-btn instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=м.+Черкаси,+вул.+Небесної+Сотні,+105" target="_blank" class="social-btn maps">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Google Maps</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="social-links">
-                    <h3>Слідкуйте за мною</h3>
-                    <div class="social-buttons">
-                        <a href="https://www.facebook.com/100095035722399/" target="_blank" class="social-btn facebook">
-                            <i class="fab fa-facebook-f"></i>
-                            <span>Facebook</span>
-                        </a>
-                        <a href="https://www.instagram.com/anastasia_.zabolotna?igsh=MXc1NTM5MWJlZHo0NQ==" target="_blank" class="social-btn instagram">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=м.+Черкаси,+вул.+Небесної+Сотні,+105" target="_blank" class="social-btn maps">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <span>Google Maps</span>
-                        </a>
-                    </div>
+                <div class="appointment-form">
+                    <h3>Записатися на сеанс</h3>
+                    <form id="appointmentForm" class="booking-form">
+                        <div class="form-group">
+                            <label for="name">Ім'я *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Бажана дата *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">Бажаний час *</label>
+                            <select id="time" name="time" required>
+                                <option value="">Оберіть час</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sessionType">Тип сеансу *</label>
+                            <select id="sessionType" name="sessionType" required>
+                                <option value="">Оберіть тип</option>
+                                <option value="individual">Індивідуальна консультація</option>
+                                <option value="couple">Парна терапія</option>
+                                <option value="family">Сімейна терапія</option>
+                                <option value="group">Групова терапія</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Повідомлення</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Розкажіть коротко про вашу ситуацію або питання..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fas fa-calendar-plus"></i>
+                            Відправити заявку
+                        </button>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
                 </div>
             </div>
         </div>

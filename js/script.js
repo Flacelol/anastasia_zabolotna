@@ -150,3 +150,207 @@ document.addEventListener('DOMContentLoaded', () => {
     heroImage.style.transform = 'translateX(50px)';
     heroImage.style.transition = 'opacity 1s ease, transform 1s ease';
 });
+
+
+// Booking Management System
+class BookingManager {
+    constructor() {
+        this.storageKey = 'psychologist_bookings';
+        this.bookings = this.loadBookings();
+    }
+    
+    loadBookings() {
+        try {
+            const stored = localStorage.getItem(this.storageKey);
+            return stored ? JSON.parse(stored) : {};
+        } catch (error) {
+            console.error('Error loading bookings:', error);
+            return {};
+        }
+    }
+    
+    saveBookings() {
+        try {
+            localStorage.setItem(this.storageKey, JSON.stringify(this.bookings));
+            return true;
+        } catch (error) {
+            console.error('Error saving bookings:', error);
+            return false;
+        }
+    }
+    
+    isTimeBooked(date, time) {
+        const dateKey = date;
+        return this.bookings[dateKey] && this.bookings[dateKey].includes(time);
+    }
+    
+    addBooking(date, time, clientData) {
+        if (this.isTimeBooked(date, time)) {
+            return false; // Time already booked
+        }
+        
+        if (!this.bookings[date]) {
+            this.bookings[date] = [];
+        }
+        
+        this.bookings[date].push(time);
+        
+        // Also save client data for reference (optional)
+        const bookingKey = `${date}_${time}`;
+        const clientBookings = JSON.parse(localStorage.getItem('client_bookings') || '{}');
+        clientBookings[bookingKey] = {
+            ...clientData,
+            bookedAt: new Date().toISOString()
+        };
+        localStorage.setItem('client_bookings', JSON.stringify(clientBookings));
+        
+        return this.saveBookings();
+    }
+    
+    removeBooking(date, time) {
+        if (this.bookings[date]) {
+            this.bookings[date] = this.bookings[date].filter(t => t !== time);
+            if (this.bookings[date].length === 0) {
+                delete this.bookings[date];
+            }
+            
+            // Remove client data
+            const bookingKey = `${date}_${time}`;
+            const clientBookings = JSON.parse(localStorage.getItem('client_bookings') || '{}');
+            delete clientBookings[bookingKey];
+            localStorage.setItem('client_bookings', JSON.stringify(clientBookings));
+            
+            return this.saveBookings();
+        }
+        return false;
+    }
+    
+    getAvailableTimes(date) {
+        const allTimes = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+        const bookedTimes = this.bookings[date] || [];
+        return allTimes.filter(time => !bookedTimes.includes(time));
+    }
+    
+    clearAllBookings() {
+        this.bookings = {};
+        localStorage.removeItem('client_bookings');
+        return this.saveBookings();
+    }
+}
+
+// Initialize booking manager
+const bookingManager = new BookingManager();
+
+// Form handling
+document.addEventListener('DOMContentLoaded', () => {
+    const appointmentForm = document.getElementById('appointmentForm');
+    const dateInput = document.getElementById('date');
+    const timeSelect = document.getElementById('time');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Set minimum date to today
+    const today = new Date();
+    const formattedToday = today.toISOString().split('T')[0];
+    dateInput.min = formattedToday;
+    
+    // Update available times when date changes
+    function updateAvailableTimes() {
+        const selectedDate = dateInput.value;
+        if (!selectedDate) return;
+        
+        const availableTimes = bookingManager.getAvailableTimes(selectedDate);
+        
+        // Clear current options except the first one
+        timeSelect.innerHTML = '<option value="">Оберіть час</option>';
+        
+        // Add available times
+        availableTimes.forEach(time => {
+            const option = document.createElement('option');
+            option.value = time;
+            option.textContent = time;
+            timeSelect.appendChild(option);
+        });
+        
+        // Show message if no times available
+        if (availableTimes.length === 0) {
+            const option = document.createElement('option');
+            option.value = '';
+            option.textContent = 'Немає вільного часу на цю дату';
+            option.disabled = true;
+            timeSelect.appendChild(option);
+        }
+    }
+    
+    // Event listeners
+    dateInput.addEventListener('change', updateAvailableTimes);
+    
+    // Form submission
+    appointmentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const selectedDate = formData.get('date');
+        const selectedTime = formData.get('time');
+        
+        // Check if time is still available
+        if (bookingManager.isTimeBooked(selectedDate, selectedTime)) {
+            showMessage('Вибачте, цей час вже зайнятий. Будь ласка, оберіть інший час.', 'error');
+            updateAvailableTimes(); // Refresh available times
+            return;
+        }
+        
+        // Prepare client data
+        const clientData = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            sessionType: formData.get('sessionType'),
+            message: formData.get('message')
+        };
+        
+        // Disable submit button
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Відправляємо...';
+        
+        // Here you would typically send the data to EmailJS or your backend
+        // For now, we'll simulate the process
+        setTimeout(() => {
+            // Add booking to local storage
+            if (bookingManager.addBooking(selectedDate, selectedTime, clientData)) {
+                showMessage('Ваша заявка успішно відправлена! Я зв\'яжуся з вами найближчим часом для підтвердження.', 'success');
+                appointmentForm.reset();
+                dateInput.min = formattedToday; // Restore min date after reset
+                timeSelect.innerHTML = '<option value="">Оберіть час</option>';
+            } else {
+                showMessage('Сталася помилка при збереженні бронювання. Спробуйте ще раз.', 'error');
+            }
+            
+            // Restore submit button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        }, 1000);
+    });
+    
+    // Show message function
+    function showMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
+    }
+    
+    // Admin function to clear all bookings (for testing)
+    window.clearAllBookings = function() {
+        if (confirm('Ви впевнені, що хочете очистити всі бронювання?')) {
+            bookingManager.clearAllBookings();
+            updateAvailableTimes();
+            alert('Всі бронювання очищено!');
+        }
+    };
+});
