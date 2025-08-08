@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -46,13 +45,13 @@ body {
 }
 
 .nav-logo h2 {
-    color: #d63384;
+    color: #1e40af;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
 .nav-logo span {
-    color: #e685a1;
+    color: #3b82f6;
     font-size: 0.9rem;
     font-weight: 300;
 }
@@ -73,7 +72,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #d63384;
+    color: #1e40af;
 }
 
 .nav-link::after {
@@ -83,7 +82,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #d63384;
+    background: #1e40af;
     transition: width 0.3s ease;
 }
 
@@ -111,7 +110,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
     padding-top: 80px;
 }
 
@@ -128,14 +127,14 @@ body {
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 600;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: #e685a1;
+    color: #3b82f6;
     margin-bottom: 1.5rem;
     font-weight: 400;
 }
@@ -164,25 +163,25 @@ body {
 }
 
 .btn-primary {
-    background: #d63384;
+    background: #1e40af;
     color: white;
-    border-color: #d63384;
+    border-color: #1e40af;
 }
 
 .btn-primary:hover {
     background: transparent;
-    color: #d63384;
-    border-color: #d63384;
+    color: #1e40af;
+    border-color: #1e40af;
 }
 
 .btn-secondary {
     background: transparent;
-    color: #d63384;
-    border-color: #d63384;
+    color: #1e40af;
+    border-color: #1e40af;
 }
 
 .btn-secondary:hover {
-    background: #d63384;
+    background: #1e40af;
     color: white;
 }
 
@@ -197,14 +196,14 @@ body {
     object-fit: cover;
     object-position: center top;
     border-radius: 20px;
-    border: 4px solid #f8bbd9;
-    box-shadow: 0 20px 40px rgba(214, 51, 132, 0.2);
+    border: 4px solid #93c5fd;
+    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-photo:hover {
     transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(214, 51, 132, 0.3);
+    box-shadow: 0 30px 60px rgba(30, 64, 175, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -224,14 +223,14 @@ body {
 .image-placeholder {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #e685a1;
-    border: 2px dashed #f8bbd9;
+    color: #3b82f6;
+    border: 2px dashed #93c5fd;
 }
 
 .image-placeholder i {
@@ -252,7 +251,7 @@ body {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -279,16 +278,16 @@ body {
 
 .about-intro {
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
     padding: 2rem;
     border-radius: 15px;
-    border-left: 4px solid #d63384;
-    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.1);
+    border-left: 4px solid #1e40af;
+    box-shadow: 0 5px 15px rgba(30, 64, 175, 0.1);
 }
 
 .about-intro h3 {
     font-size: 1.8rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -305,7 +304,7 @@ body {
 
 .education h4, .experience h4 {
     font-size: 1.3rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -319,13 +318,13 @@ body {
 .education li, .experience li {
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-    background: #fdf2f8;
+    background: #eff6ff;
     border-radius: 10px;
-    border-left: 4px solid #d63384;
+    border-left: 4px solid #1e40af;
 }
 
 .education strong, .experience strong {
-    color: #d63384;
+    color: #1e40af;
     font-weight: 600;
 }
 
@@ -338,13 +337,13 @@ body {
 .large-photo {
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(214, 51, 132, 0.1);
+    box-shadow: 0 15px 35px rgba(30, 64, 175, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .large-photo:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(214, 51, 132, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(30, 64, 175, 0.3);
 }
 
 .about-photo {
@@ -352,6 +351,12 @@ body {
     height: 280px;
     object-fit: cover;
     display: block;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+}
+
+.about-photo:hover {
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
 }
 
 /* Remove old placeholder styles */
@@ -362,7 +367,7 @@ body {
 /* Work Section */
 .work {
     padding: 6rem 0;
-    background: #fdf2f8;
+    background: #eff6ff;
 }
 
 .work-methods {
@@ -377,19 +382,19 @@ body {
     padding: 2.5rem;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(214, 51, 132, 0.1);
+    box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .method-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(214, 51, 132, 0.15);
+    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
 }
 
 .method-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #d63384 0%, #e685a1 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -404,7 +409,7 @@ body {
 
 .method-card h3 {
     font-size: 1.5rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -419,12 +424,12 @@ body {
     background: white;
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(214, 51, 132, 0.1);
+    box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
 }
 
 .gallery-preview h3 {
     font-size: 2rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -438,13 +443,13 @@ body {
 /* Gallery Page Styles */
 .gallery-header {
     padding: 8rem 0 4rem;
-    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
     text-align: center;
 }
 
 .gallery-hero h1 {
     font-size: 3rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -458,7 +463,7 @@ body {
 .gallery-filters {
     padding: 2rem 0;
     background: white;
-    border-bottom: 1px solid #f8bbd9;
+    border-bottom: 1px solid #93c5fd;
 }
 
 .filter-buttons {
@@ -470,9 +475,9 @@ body {
 
 .filter-btn {
     padding: 10px 20px;
-    border: 2px solid #e685a1;
+    border: 2px solid #3b82f6;
     background: transparent;
-    color: #d63384;
+    color: #1e40af;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -481,14 +486,14 @@ body {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #d63384;
+    background: #1e40af;
     color: white;
-    border-color: #d63384;
+    border-color: #1e40af;
 }
 
 .gallery-grid-section {
     padding: 4rem 0;
-    background: #fdf2f8;
+    background: #eff6ff;
 }
 
 .gallery-grid {
@@ -509,30 +514,30 @@ body {
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(214, 51, 132, 0.1);
+    box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(214, 51, 132, 0.15);
+    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
 }
 
 .gallery-card .media-placeholder {
     width: 100%;
     height: 250px;
-    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%);
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #e685a1;
+    color: #3b82f6;
     border: none;
     position: relative;
 }
 
 .gallery-card .media-placeholder.video {
-    background: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 100%);
+    background: linear-gradient(135deg, #dbeafe 0%, #c7d2fe 100%);
 }
 
 .gallery-card .media-placeholder i {
@@ -551,7 +556,7 @@ body {
 
 .gallery-info h3 {
     font-size: 1.3rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -569,7 +574,7 @@ body {
 
 .cta-content h2 {
     font-size: 2.5rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -602,14 +607,14 @@ body {
     gap: 1.5rem;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: #fdf2f8;
+    background: #eff6ff;
     border-radius: 15px;
 }
 
 .contact-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #d63384 0%, #e685a1 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -624,7 +629,7 @@ body {
 
 .contact-details h4 {
     font-size: 1.2rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -640,7 +645,7 @@ body {
 
 .social-links h3 {
     font-size: 1.8rem;
-    color: #d63384;
+    color: #1e40af;
     margin-bottom: 2rem;
     font-weight: 600;
 }
@@ -683,7 +688,7 @@ body {
 
 /* Footer */
 .footer {
-    background: #d63384;
+    background: #1e40af;
     color: white;
     padding: 3rem 0 1rem;
 }
@@ -701,7 +706,7 @@ body {
 }
 
 .footer-info p {
-    color: #f8bbd9;
+    color: #93c5fd;
 }
 
 .footer-links {
@@ -711,7 +716,7 @@ body {
 }
 
 .footer-links a {
-    color: #f8bbd9;
+    color: #93c5fd;
     text-decoration: none;
     transition: color 0.3s ease;
     white-space: nowrap;
@@ -724,10 +729,9 @@ body {
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #e685a1;
-    color: #f8bbd9;
+    border-top: 1px solid #3b82f6;
+    color: #93c5fd;
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -979,12 +983,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #d63384;
+    background: #1e40af;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #b02a5b;
+    background: #1d4ed8;
 }
 
 /* Map Section */
