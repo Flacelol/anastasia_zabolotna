@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -16,6 +21,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Navigation */
@@ -778,41 +784,125 @@ body {
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
+        max-width: 100%;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .hero-container {
+        padding: 0 15px;
+        max-width: 100%;
     }
     
     .hero-content h1 {
         font-size: 2rem;
+        word-wrap: break-word;
     }
     
     .hero-subtitle {
         font-size: 1.2rem;
+        word-wrap: break-word;
     }
     
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
     
     .image-placeholder {
-        width: 250px;
+        width: 100%;
+        max-width: 250px;
         height: 250px;
     }
     
     .method-card {
         padding: 2rem;
+        margin: 0 auto;
+        max-width: 100%;
     }
     
     .social-buttons {
         gap: 0.5rem;
+        width: 100%;
     }
     
     .social-btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+        width: 100%;
+        max-width: 280px;
     }
     
     .gallery-hero h1 {
         font-size: 2rem;
+        word-wrap: break-word;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    
+    .filter-buttons {
+        padding: 0 15px;
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    /* Запобігання горизонтальної прокрутки */
+    .hero-container,
+    .about-content,
+    .contact-content,
+    .work-methods,
+    .gallery-grid {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Адаптивні зображення */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Адаптивні відео */
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    /* Запобігання виходу тексту за межі */
+    h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
