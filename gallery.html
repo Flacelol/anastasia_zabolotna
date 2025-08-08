@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Олена Петренко</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Олена Петренко</h2>
+                <span>Дитячий психолог</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Головна</a></li>
+                <li><a href="index.html#about" class="nav-link">Про мене</a></li>
+                <li><a href="index.html#work" class="nav-link">Робота з дітьми</a></li>
+                <li><a href="gallery.html" class="nav-link active">Галерея</a></li>
+                <li><a href="index.html#contact" class="nav-link">Контакти</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <div class="gallery-hero">
+                <h1>Галерея моєї роботи</h1>
+                <p>Фото та відео з моєї практики роботи з дітьми</p>
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Повернутися на головну
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Всі</button>
+                <button class="filter-btn" data-filter="sessions">Сесії</button>
+                <button class="filter-btn" data-filter="activities">Активності</button>
+                <button class="filter-btn" data-filter="art">Арт-терапія</button>
+                <button class="filter-btn" data-filter="group">Групові заняття</button>
+                <button class="filter-btn" data-filter="videos">Відео</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Individual Sessions -->
+                <div class="gallery-item" data-category="sessions">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-user-friends"></i>
+                            <p>Індивідуальна сесія</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Індивідуальна консультація</h3>
+                            <p>Робота з дитиною 7 років</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="art">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-palette"></i>
+                            <p>Арт-терапія</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Малювання емоцій</h3>
+                            <p>Арт-терапевтична сесія</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="videos">
+                    <div class="gallery-card">
+                        <div class="media-placeholder video">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Відео сесії</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Ігрова терапія</h3>
+                            <p>Фрагмент заняття</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="group">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-users"></i>
+                            <p>Групове заняття</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Соціальні навички</h3>
+                            <p>Групова робота з дітьми</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="activities">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <p>Розвивальні ігри</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Когнітивний розвиток</h3>
+                            <p>Розвивальні вправи</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="art">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                            <p>Творчі роботи</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Дитячі малюнки</h3>
+                            <p>Результати арт-терапії</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="sessions">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-heart"></i>
+                            <p>Емоційна робота</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Робота з емоціями</h3>
+                            <p>Розвиток емоційного інтелекту</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="videos">
+                    <div class="gallery-card">
+                        <div class="media-placeholder video">
+                            <i class="fas fa-video"></i>
+                            <p>Майстер-клас</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Поради батькам</h3>
+                            <p>Відео-консультація</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="group">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-hands-helping"></i>
+                            <p>Командна робота</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Співпраця</h3>
+                            <p>Навички командної роботи</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="activities">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-book-open"></i>
+                            <p>Навчальні матеріали</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Освітні ресурси</h3>
+                            <p>Матеріали для розвитку</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="art">
+                    <div class="gallery-card">
+                        <div class="media-placeholder">
+                            <i class="fas fa-music"></i>
+                            <p>Музична терапія</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Музика та емоції</h3>
+                            <p>Музично-терапевтичні заняття</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="videos">
+                    <div class="gallery-card">
+                        <div class="media-placeholder video">
+                            <i class="fas fa-camera"></i>
+                            <p>Відгук батьків</p>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Історія успіху</h3>
+                            <p>Відгук про роботу</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery CTA -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Готові почати роботу?</h2>
+                <p>Зв'яжіться зі мною для консультації та обговорення потреб вашої дитини</p>
+                <a href="index.html#contact" class="btn btn-primary">Записатися на консультацію</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Олена Петренко</h3>
+                    <p>Дитячий психолог</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Головна</a>
+                    <a href="index.html#about">Про мене</a>
+                    <a href="index.html#work">Робота з дітьми</a>
+                    <a href="gallery.html">Галерея</a>
+                    <a href="index.html#contact">Контакти</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Олена Петренко. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
