@@ -1280,3 +1280,10 @@ html {
         font-size: 0.9rem;
     }
 }
+
+
+.form-message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}

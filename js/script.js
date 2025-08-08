@@ -330,23 +330,41 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Відправляємо...';
         
-        // Here you would typically send the data to EmailJS or your backend
-        // For now, we'll simulate the process
-        setTimeout(() => {
-            // Add booking to local storage
-            if (bookingManager.addBooking(selectedDate, selectedTime, clientData)) {
-                showMessage('Ваша заявка успішно відправлена! Я зв\'яжуся з вами найближчим часом для підтвердження.', 'success');
-                appointmentForm.reset();
-                dateInput.min = formattedToday; // Restore min date after reset
-                timeSelect.innerHTML = '<option value="">Оберіть час</option>';
-            } else {
-                showMessage('Сталася помилка при збереженні бронювання. Спробуйте ще раз.', 'error');
-            }
-            
-            // Restore submit button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-        }, 1000);
+        // Prepare template parameters for EmailJS
+        const templateParams = {
+            from_name: clientData.name,
+            from_email: clientData.email,
+            phone: clientData.phone,
+            date: selectedDate,
+            time: selectedTime,
+            session_type: clientData.sessionType,
+            message: clientData.message || 'Не вказано'
+        };
+        
+        // Send email using EmailJS
+        emailjs.send('service_wrz1o2p', 'template_9euk13t', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                
+                // Add booking to local storage
+                if (bookingManager.addBooking(selectedDate, selectedTime, clientData)) {
+                    showMessage('Ваша заявка успішно відправлена! Я зв\'яжуся з вами найближчим часом для підтвердження.', 'success');
+                    appointmentForm.reset();
+                    dateInput.min = formattedToday; // Restore min date after reset
+                    timeSelect.innerHTML = '<option value="">Оберіть час</option>';
+                } else {
+                    showMessage('Заявка відправлена, але сталася помилка при збереженні бронювання.', 'warning');
+                }
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                showMessage('Сталася помилка при відправці заявки. Спробуйте ще раз або зв\'яжіться зі мною напряму.', 'error');
+            })
+            .finally(function() {
+                // Restore submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            });
     });
     
     // Show message function
