@@ -1066,3 +1066,40 @@ html {
         justify-content: center;
     }
 }
+
+/* Desktop optimizations for larger screens */
+@media (min-width: 1024px) {
+    .about-photo {
+        height: 400px;
+    }
+    
+    .image-grid {
+        gap: 2rem;
+    }
+    
+    .large-photo {
+        border-radius: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-photo {
+        height: 450px;
+    }
+    
+    .image-grid {
+        gap: 2.5rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-photo {
+        height: 500px;
+    }
+    
+    .image-grid {
+        gap: 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
